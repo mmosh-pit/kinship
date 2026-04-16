@@ -47,6 +47,22 @@ Kinship Exchange — the discovery layer where Architects publish Executors and 
 
 Autocrat — the deterministic program that opens markets, operates escrow, enforces the resolution rule, and emits Codes to Executors at resolution.
 
+## Repository Structure
+
+This monorepo contains several applications and services that together comprise the Kinship platform:
+
+| Directory | Description | Tech Stack |
+|-----------|-------------|------------|
+| [`bluesky-post-mcp`](./bluesky-post-mcp) | MCP server that enables AI agents to create posts on Bluesky with automatic user tagging, threaded post support, and spam filtering. | Node.js, TypeScript, Express, MongoDB |
+| [`kinship-agent-be`](./kinship-agent-be) | LangGraph-powered agent orchestration backend implementing a Supervisor-Worker pattern where a Supervisor agent routes user interactions to specialized Worker agents (Twitter, Telegram, Calendar, etc.). | Python, FastAPI, LangGraph, LangChain, PostgreSQL |
+| [`kinship-assets`](./kinship-assets) | Asset management microservice for the Kinship Intelligence platform. Handles game assets with rich metadata including AOE, hitboxes, HEARTS facet mapping, animations, and scene composition. | Node.js, TypeScript, Express, PostgreSQL, Google Cloud Storage |
+| [`kinship-backend`](./kinship-backend) | Core backend API server for the Kinship platform. Provides authentication, user management, and platform services with Drizzle ORM for database operations. | Node.js, TypeScript, Fastify, Drizzle ORM, PostgreSQL |
+| [`kinship-knowledge`](./kinship-knowledge) | AI-powered backend for the Kinship Intelligence platform. Includes REST APIs for NPCs, Challenges, Quests, and Knowledge, six LangGraph workflows (Scene Generation, Knowledge Ingestion, NPC Dialogue, HEARTS Scoring, etc.), and a WebSocket layer for multi-player scenes. | Python, FastAPI, LangGraph, PostgreSQL, Pinecone, Claude |
+| [`kinship-shared`](./kinship-shared) | Kinship Studio — the frontend application for designing and configuring Action Markets, agents, game scenes, and builders. | Next.js, TypeScript |
+| [`kinship-web`](./kinship-web) | The main Kinship consumer-facing web application with Payload CMS integration and Solana blockchain features. | Next.js, TypeScript, Payload CMS, Tailwind CSS |
+| [`kinship-ai-rewoo`](./kinship-ai-rewoo) | ReACT agent API that exposes AI agents as a REST service using MCP tools. Features session authentication, chat history, streaming responses, vector database search, and integrations with Solana and Bluesky tools. | Python, FastAPI, LangGraph, Pinecone, PostgreSQL |
+| [`solana-tool`](./solana-tool) | MCP tool for executing Solana blockchain operations (token transfers) through AI agent interactions. Supports registered SPL tokens on devnet, testnet, and mainnet. | Node.js, TypeScript, Solana Web3.js |
+
 ## Contact
 
 david.levine@kinship.systems
