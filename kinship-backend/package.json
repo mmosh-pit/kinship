@@ -1,0 +1,39 @@
+{
+  "name": "mmosh-backend-node",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "db:generate": "node --import=tsx --no-warnings node_modules/.bin/drizzle-kit generate",
+    "db:migrate": "node --import=tsx --no-warnings node_modules/.bin/drizzle-kit migrate",
+    "db:studio": "node --import=tsx --no-warnings node_modules/.bin/drizzle-kit studio"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.3",
+    "@fastify/cors": "^10.0.2",
+    "@fastify/helmet": "^13.0.1",
+    "@fastify/jwt": "^9.1.0",
+    "@fastify/websocket": "^11.0.2",
+    "@sendgrid/mail": "^8.1.5",
+    "argon2": "^0.43.0",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.40.1",
+    "fastify": "^5.3.2",
+    "fastify-plugin": "^5.0.1",
+    "node-cron": "^3.0.3",
+    "openai": "^4.90.0",
+    "postgres": "^3.4.5",
+    "stripe": "^17.7.0",
+    "twilio": "^5.13.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@types/node-cron": "^3.0.11",
+    "drizzle-kit": "^0.30.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

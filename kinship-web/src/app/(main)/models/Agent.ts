@@ -1,0 +1,22 @@
+type AgentData = {
+  coins: [];
+  community: [];
+  creator: string;
+  creatorUsername: string;
+  desc: string;
+  dexlistingdate: string;
+  image: string;
+  key: string;
+  minpresalesupply: number;
+  name: string;
+  pass: [];
+  presaleenddate: string;
+  presalestartdate: string;
+  presalesupply: number;
+  price: number;
+  profiles: [];
+  symbol: string;
+  tokenomics: [];
+  system_prompt?: string;
+  _id: string;
+};

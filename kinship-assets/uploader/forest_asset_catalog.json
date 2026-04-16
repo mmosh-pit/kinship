@@ -1,0 +1,1083 @@
+{
+  "pack_name": "Tiny Forest Elements",
+  "pack_version": "1.0",
+  "total_assets": 63,
+  "categories": {
+    "tile": 14,
+    "object": 42,
+    "sprite": 7
+  },
+  "assets": [
+    {
+      "file": "01.png",
+      "name": "grass_block_tall",
+      "display_name": "Grass Block (Tall)",
+      "type": "tile",
+      "meta_description": "Isometric grass block tile with lush green top surface, dirt/grass sides, and subtle footprint marks. Tall variant with visible depth. Core ground tile for forest clearings and meadow areas.",
+      "tags": ["ground", "grass", "terrain", "green", "forest"],
+      "dimensions": { "width": 194, "height": 204 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": null, "base_delta": 1, "description": "Natural grass surface promotes calm and connection with nature" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable terrain tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "02.png",
+      "name": "cobblestone_four",
+      "display_name": "Cobblestone (4-Block)",
+      "type": "tile",
+      "meta_description": "Isometric arrangement of four gray stone cobblestone blocks. Used for paths, patios, and stone-paved areas in the forest village.",
+      "tags": ["stone", "path", "terrain", "cobblestone", "gray"],
+      "dimensions": { "width": 167, "height": 164 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": null, "base_delta": 1, "description": "Solid stone path represents stability and resilience" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable stone path tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "03.png",
+      "name": "cobblestone_three",
+      "display_name": "Cobblestone (3-Block)",
+      "type": "tile",
+      "meta_description": "Three gray cobblestone blocks arranged in an L-shape. Variant stone path tile for creating natural-looking stone walkways and borders.",
+      "tags": ["stone", "path", "terrain", "cobblestone", "gray"],
+      "dimensions": { "width": 165, "height": 130 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": null, "base_delta": 1, "description": "Stone path foundation" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable stone path tile variant", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "04.png",
+      "name": "cobblestone_sprout",
+      "display_name": "Cobblestone with Sprout",
+      "type": "tile",
+      "meta_description": "Three gray cobblestone blocks with a small green plant sprouting between the cracks. Symbolizes growth through adversity — nature reclaiming stone.",
+      "tags": ["stone", "path", "terrain", "sprout", "growth", "nature"],
+      "dimensions": { "width": 165, "height": 130 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "T", "secondary_facet": "H", "base_delta": 2, "description": "Plant growing through stone symbolizes tenacity and perseverance" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 3000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Decorative tile that may trigger growth dialogue", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "05.png",
+      "name": "stone_slab_cracked",
+      "display_name": "Stone Slab (Cracked)",
+      "type": "tile",
+      "meta_description": "Flat isometric stone slab tile with natural crack patterns on the surface. Used for flooring in caves, ruins, or crafting areas.",
+      "tags": ["stone", "slab", "terrain", "cracked", "floor"],
+      "dimensions": { "width": 178, "height": 142 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": null, "base_delta": 1, "description": "Weathered stone surface" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable stone floor tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "06.png",
+      "name": "grass_block_flat",
+      "display_name": "Grass Block (Flat)",
+      "type": "tile",
+      "meta_description": "Flat isometric grass tile with lush green surface, grass tufts on edges. Lower profile than tall grass block. For open meadow and field areas.",
+      "tags": ["ground", "grass", "terrain", "green", "forest", "meadow"],
+      "dimensions": { "width": 193, "height": 173 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": null, "base_delta": 1, "description": "Open grass surface for peaceful exploration" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable terrain tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "07.png",
+      "name": "grass_block_clean",
+      "display_name": "Grass Block (Clean)",
+      "type": "tile",
+      "meta_description": "Simple clean isometric grass tile with smooth green top. Minimal detail variant for large open areas and backgrounds.",
+      "tags": ["ground", "grass", "terrain", "green", "simple"],
+      "dimensions": { "width": 178, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": null, "base_delta": 1, "description": "Clean grass surface" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable terrain tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "08.png",
+      "name": "dirt_block",
+      "display_name": "Dirt Block",
+      "type": "tile",
+      "meta_description": "Isometric brown dirt/mud tile block with pebble texture. Used for farm soil, unpaved areas, trails, and digging zones.",
+      "tags": ["ground", "dirt", "terrain", "brown", "farm", "soil"],
+      "dimensions": { "width": 178, "height": 142 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 1, "description": "Soil ready for planting — supports autonomy in farming activities" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 1000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Plantable soil tile for farm scene", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "09.png",
+      "name": "barrel_short",
+      "display_name": "Wooden Barrel (Short)",
+      "type": "object",
+      "meta_description": "Small wooden barrel with metal bands and open top. Can store items or water. Interactive container for resource gathering activities.",
+      "tags": ["barrel", "container", "wood", "storage", "interactive"],
+      "dimensions": { "width": 101, "height": 106 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 2, "description": "Container for collecting and storing resources — builds independence" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 1000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Tap to check barrel contents", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "10.png",
+      "name": "ladder_wooden",
+      "display_name": "Wooden Ladder",
+      "type": "object",
+      "meta_description": "Rustic wooden ladder with log rungs and rope bindings. Used for climbing, building tasks, or accessing elevated areas. Represents challenge and perseverance.",
+      "tags": ["ladder", "wood", "climbing", "tool", "vertical"],
+      "dimensions": { "width": 131, "height": 256 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "T", "secondary_facet": "E", "base_delta": 3, "description": "Climbing the ladder requires tenacity and builds empowerment" },
+        "aoe": { "shape": "rectangle", "width": 0.5, "height": 2, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Interactive — player climbs up or down", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "11.png",
+      "name": "tent_red",
+      "display_name": "Red Tent",
+      "type": "object",
+      "meta_description": "A-frame red camping tent with wooden door flap. Shelter structure for forest campsite scene. Rest point where players can save progress or recover.",
+      "tags": ["tent", "shelter", "camp", "red", "structure", "rest"],
+      "dimensions": { "width": 234, "height": 185 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "Si", "base_delta": 3, "description": "Safe resting place promotes inner harmony and self-reflection" },
+        "aoe": { "shape": "rectangle", "width": 2, "height": 1.5, "unit": "tiles" },
+        "hitbox": { "width": 2, "height": 1.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 3, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Enter tent to rest and reflect", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "12.png",
+      "name": "furnace_stone_ground",
+      "display_name": "Stone Furnace (Ground)",
+      "type": "object",
+      "meta_description": "Tall stone brick furnace with metal grate on top, sitting on ground. Used for smelting, cooking, or crafting activities in workshop areas.",
+      "tags": ["furnace", "stone", "crafting", "workshop", "cooking"],
+      "dimensions": { "width": 178, "height": 269 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 4, "description": "Crafting at the furnace builds empowerment through creation" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 3, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Tap to start crafting activity", "is_movable": false, "is_destructible": false, "level_required": 2 }
+      }
+    },
+    {
+      "file": "13.png",
+      "name": "furnace_stone_elevated_a",
+      "display_name": "Stone Furnace (Elevated A)",
+      "type": "object",
+      "meta_description": "Stone brick furnace elevated on a single wooden post. Variant A with post visible below. Used in elevated workshop or treehouse areas.",
+      "tags": ["furnace", "stone", "crafting", "elevated", "workshop"],
+      "dimensions": { "width": 178, "height": 260 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 4, "description": "Elevated crafting station for advanced challenges" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 3, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Elevated crafting station", "is_movable": false, "is_destructible": false, "level_required": 3 }
+      }
+    },
+    {
+      "file": "14.png",
+      "name": "furnace_stone_elevated_b",
+      "display_name": "Stone Furnace (Elevated B)",
+      "type": "object",
+      "meta_description": "Stone brick furnace elevated on a single wooden post. Variant B with slightly different angle. Pair with Elevated A for workshop setups.",
+      "tags": ["furnace", "stone", "crafting", "elevated", "workshop"],
+      "dimensions": { "width": 178, "height": 260 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 4, "description": "Elevated crafting station variant" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 3, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Elevated crafting station variant", "is_movable": false, "is_destructible": false, "level_required": 3 }
+      }
+    },
+    {
+      "file": "15.png",
+      "name": "well_stone",
+      "display_name": "Stone Well",
+      "type": "object",
+      "meta_description": "Stone-and-wood water well with rope and bucket mechanism. Central gathering point in village scenes. Players can draw water for quests or interact with NPCs here.",
+      "tags": ["well", "water", "stone", "village", "gathering", "interactive"],
+      "dimensions": { "width": 118, "height": 212 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "So", "secondary_facet": "A", "base_delta": 3, "description": "Community gathering point — promotes social interaction and self-reliance" },
+        "aoe": { "shape": "circle", "radius": 1.5, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 3000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 2, "description": "Draw water or interact — central gathering point", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "16.png",
+      "name": "platform_wooden",
+      "display_name": "Wooden Platform",
+      "type": "object",
+      "meta_description": "Flat wooden platform with four corner posts. Used as a stage, display table, or foundation for building activities.",
+      "tags": ["platform", "wood", "table", "stage", "building"],
+      "dimensions": { "width": 166, "height": 130 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": null, "base_delta": 2, "description": "Platform for building and displaying creations" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 0.3, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 1000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Place items on platform", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "17.png",
+      "name": "sign_canvas_front",
+      "display_name": "Canvas Sign (Front)",
+      "type": "object",
+      "meta_description": "Wooden A-frame sign with canvas/parchment surface, viewed from front. Displays quest information, directions, or NPC messages. Front-facing variant.",
+      "tags": ["sign", "canvas", "information", "quest", "wood", "direction"],
+      "dimensions": { "width": 209, "height": 283 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "Si", "secondary_facet": null, "base_delta": 2, "description": "Reading signs develops spatial intelligence and navigation" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 2, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 3, "description": "Tap to read sign content — quest hints and directions", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "18.png",
+      "name": "sign_canvas_back",
+      "display_name": "Canvas Sign (Back)",
+      "type": "object",
+      "meta_description": "Wooden A-frame sign with canvas/parchment surface, viewed from back/side angle. Back-facing variant paired with front sign for isometric placement.",
+      "tags": ["sign", "canvas", "information", "wood", "direction"],
+      "dimensions": { "width": 209, "height": 283 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "Si", "secondary_facet": null, "base_delta": 1, "description": "Back of sign — curiosity prompt" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 2, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "north" },
+        "rules": { "requires_item": null, "max_users": 3, "description": "Back view of canvas sign", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "19.png",
+      "name": "pebbles_pair",
+      "display_name": "Pebbles (Pair)",
+      "type": "object",
+      "meta_description": "Two small flat pebble stones. Decorative ground scatter for natural-looking paths and terrain. Can be picked up as collectible items.",
+      "tags": ["stone", "pebble", "decoration", "small", "ground", "collectible"],
+      "dimensions": { "width": 90, "height": 104 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Decorative ground element" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.5, "height": 0.3, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground_decor", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Collectible pebbles", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "20.png",
+      "name": "chest_wooden",
+      "display_name": "Wooden Chest",
+      "type": "object",
+      "meta_description": "Brown wooden chest with dark interior and leather clasp. Storage container for quest rewards, treasures, or collected items. Key interactive object.",
+      "tags": ["chest", "storage", "treasure", "interactive", "quest", "reward"],
+      "dimensions": { "width": 179, "height": 145 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": "E", "base_delta": 4, "description": "Opening chests rewards exploration and builds autonomy" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 0.7, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Tap to open — may contain quest items or rewards", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "21.png",
+      "name": "door_short_front",
+      "display_name": "Wooden Door (Short Front)",
+      "type": "object",
+      "meta_description": "Short wooden plank door viewed from front. Used as entrance to small buildings, fences, or gates. Isometric front-facing variant.",
+      "tags": ["door", "wood", "entrance", "gate", "building"],
+      "dimensions": { "width": 50, "height": 79 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 2, "description": "Doors represent choice and freedom to explore" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Open/close door", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "22.png",
+      "name": "door_short_side",
+      "display_name": "Wooden Door (Short Side)",
+      "type": "object",
+      "meta_description": "Short wooden plank door viewed from side angle. Isometric side-facing variant paired with front door for building walls.",
+      "tags": ["door", "wood", "entrance", "gate", "building"],
+      "dimensions": { "width": 50, "height": 78 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 2, "description": "Door variant for isometric walls" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "east" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Side-facing door variant", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "23.png",
+      "name": "door_tall_front",
+      "display_name": "Wooden Door (Tall Front)",
+      "type": "object",
+      "meta_description": "Tall wooden plank door viewed from front. Full-height entrance for cabins, workshops, or main buildings.",
+      "tags": ["door", "wood", "entrance", "building", "tall"],
+      "dimensions": { "width": 50, "height": 104 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 2, "description": "Main entrance — gateway to new areas" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Main building entrance", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "24.png",
+      "name": "door_tall_side",
+      "display_name": "Wooden Door (Tall Side)",
+      "type": "object",
+      "meta_description": "Tall wooden plank door viewed from side angle. Full-height isometric side variant paired with front door.",
+      "tags": ["door", "wood", "entrance", "building", "tall"],
+      "dimensions": { "width": 50, "height": 104 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 2, "description": "Side-facing main entrance" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "east" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Side-facing tall door variant", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "25.png",
+      "name": "forge_stone_short",
+      "display_name": "Stone Forge (Short)",
+      "type": "object",
+      "meta_description": "Short stone brick forge/cauldron with open dark top. Low-profile crafting station for smelting and mixing activities.",
+      "tags": ["forge", "stone", "crafting", "cauldron", "workshop"],
+      "dimensions": { "width": 178, "height": 197 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 3, "description": "Forge crafting builds skill and determination" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Crafting station — short forge", "is_movable": false, "is_destructible": false, "level_required": 1 }
+      }
+    },
+    {
+      "file": "26.png",
+      "name": "forge_stone_tall",
+      "display_name": "Stone Forge (Tall)",
+      "type": "object",
+      "meta_description": "Tall stone brick forge/tower with open top and leather flap. Tall variant of crafting station for advanced smelting activities.",
+      "tags": ["forge", "stone", "crafting", "tower", "workshop"],
+      "dimensions": { "width": 179, "height": 267 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 4, "description": "Advanced forge for more complex crafting challenges" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 2000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 3, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Advanced crafting station", "is_movable": false, "is_destructible": false, "level_required": 2 }
+      }
+    },
+    {
+      "file": "27.png",
+      "name": "hammer_wooden_large",
+      "display_name": "Wooden Hammer (Large)",
+      "type": "object",
+      "meta_description": "Large wooden mallet/hammer tool with long handle. Building and crafting tool used in construction challenges. Can be equipped by player.",
+      "tags": ["tool", "hammer", "mallet", "wood", "crafting", "building"],
+      "dimensions": { "width": 58, "height": 162 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "R", "base_delta": 3, "description": "Using tools builds empowerment and resilience through effort" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.3, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 300, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Equippable crafting tool", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "28.png",
+      "name": "hammer_wooden_small",
+      "display_name": "Wooden Hammer (Small)",
+      "type": "object",
+      "meta_description": "Small wooden mallet tool. Compact building tool for lighter crafting tasks. Starter tool for new players.",
+      "tags": ["tool", "hammer", "mallet", "wood", "crafting", "small"],
+      "dimensions": { "width": 78, "height": 95 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": null, "base_delta": 2, "description": "Starter crafting tool for building confidence" },
+        "aoe": { "shape": "circle", "radius": 0.3, "unit": "tiles" },
+        "hitbox": { "width": 0.3, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 300, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Small crafting tool", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "29.png",
+      "name": "stone_small",
+      "display_name": "Small Stone",
+      "type": "object",
+      "meta_description": "Tiny isometric stone block. Ground decoration or collectible resource for crafting. Scattered around paths and terrain.",
+      "tags": ["stone", "small", "decoration", "resource", "collectible"],
+      "dimensions": { "width": 62, "height": 60 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Decorative ground stone" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 0.3, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground_decor", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Collectible stone resource", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "30.png",
+      "name": "signpost_wooden_a",
+      "display_name": "Wooden Signpost (A)",
+      "type": "object",
+      "meta_description": "Tall wooden T-shaped signpost with log crossbeam. Direction indicator placed at path intersections and scene exits. Variant A facing.",
+      "tags": ["sign", "signpost", "direction", "wood", "navigation"],
+      "dimensions": { "width": 105, "height": 188 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "Si", "secondary_facet": "A", "base_delta": 2, "description": "Signposts support navigation and independent exploration" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 1.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 2, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 3, "description": "Tap to read direction — may show route options", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "31.png",
+      "name": "signpost_wooden_b",
+      "display_name": "Wooden Signpost (B)",
+      "type": "object",
+      "meta_description": "Wooden T-shaped signpost variant B with shorter profile. Alternate angle for isometric placement at path junctions.",
+      "tags": ["sign", "signpost", "direction", "wood", "navigation"],
+      "dimensions": { "width": 105, "height": 163 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "Si", "secondary_facet": "A", "base_delta": 2, "description": "Alternate signpost for navigation" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 1.2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 2, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "north" },
+        "rules": { "requires_item": null, "max_users": 3, "description": "Direction signpost variant", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "32.png",
+      "name": "log_pile_large_a",
+      "display_name": "Log Pile (Large A)",
+      "type": "object",
+      "meta_description": "Large stacked pile of cut logs. Resource stockpile for building and crafting quests. Variant A arrangement.",
+      "tags": ["logs", "wood", "resource", "pile", "lumber", "building"],
+      "dimensions": { "width": 158, "height": 167 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "T", "secondary_facet": "E", "base_delta": 2, "description": "Gathering and stacking logs teaches patience and persistence" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 1000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Tap to gather logs for crafting", "is_movable": false, "is_destructible": true, "level_required": 0 }
+      }
+    },
+    {
+      "file": "33.png",
+      "name": "log_pile_large_b",
+      "display_name": "Log Pile (Large B)",
+      "type": "object",
+      "meta_description": "Large stacked pile of cut logs. Variant B with slightly different arrangement. Pair with Large A for varied lumber yards.",
+      "tags": ["logs", "wood", "resource", "pile", "lumber", "building"],
+      "dimensions": { "width": 158, "height": 167 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "T", "secondary_facet": "E", "base_delta": 2, "description": "Log resource stockpile" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 1000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Log resource pile variant", "is_movable": false, "is_destructible": true, "level_required": 0 }
+      }
+    },
+    {
+      "file": "34.png",
+      "name": "log_pile_small",
+      "display_name": "Log Pile (Small)",
+      "type": "object",
+      "meta_description": "Small compact pile of cut logs. Smaller resource bundle, partially depleted or starter pile for crafting.",
+      "tags": ["logs", "wood", "resource", "pile", "lumber", "small"],
+      "dimensions": { "width": 156, "height": 119 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "T", "secondary_facet": null, "base_delta": 1, "description": "Small log resource" },
+        "aoe": { "shape": "rectangle", "width": 0.8, "height": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.8, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 1000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Small log pile", "is_movable": true, "is_destructible": true, "level_required": 0 }
+      }
+    },
+    {
+      "file": "35.png",
+      "name": "stone_block_sprouted",
+      "display_name": "Stone Block (Sprouted)",
+      "type": "tile",
+      "meta_description": "Large isometric stone cube with cracked top surface and small green sprout growing from a crevice. Nature reclaiming stone — thematic piece for resilience areas.",
+      "tags": ["stone", "terrain", "sprout", "growth", "nature", "resilience"],
+      "dimensions": { "width": 177, "height": 194 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": "T", "base_delta": 3, "description": "Life growing through rock — resilience and tenacity symbol" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Decorative thematic tile — may trigger reflective dialogue", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "36.png",
+      "name": "mallet_on_pole",
+      "display_name": "Mallet on Pole",
+      "type": "object",
+      "meta_description": "Wooden mallet head mounted on a long diagonal pole. Decorative workshop tool or construction marker.",
+      "tags": ["tool", "mallet", "wood", "workshop", "decoration"],
+      "dimensions": { "width": 60, "height": 147 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": null, "base_delta": 1, "description": "Workshop tool marker" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.3, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Decorative workshop element", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "37.png",
+      "name": "fence_post_horizontal",
+      "display_name": "Fence Post (Horizontal Log)",
+      "type": "object",
+      "meta_description": "Horizontal log fence section supported by two vertical posts. Used for enclosures, farm boundaries, and animal pens.",
+      "tags": ["fence", "wood", "boundary", "farm", "enclosure"],
+      "dimensions": { "width": 97, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Boundary marker — defines areas" },
+        "aoe": { "shape": "rectangle", "width": 0.5, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Non-walkable fence boundary", "is_movable": false, "is_destructible": true, "level_required": 0 }
+      }
+    },
+    {
+      "file": "38.png",
+      "name": "tree_stump",
+      "display_name": "Tree Stump",
+      "type": "object",
+      "meta_description": "Cut tree stump with visible rings. Seat, resting point, or evidence of past logging. NPC can sit on it during dialogue.",
+      "tags": ["stump", "wood", "tree", "seat", "rest", "nature"],
+      "dimensions": { "width": 90, "height": 75 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "Si", "base_delta": 2, "description": "Sitting on a stump invites reflection and inner calm" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 1000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Sit down to rest and think", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "39.png",
+      "name": "stone_tiny",
+      "display_name": "Tiny Stone",
+      "type": "object",
+      "meta_description": "Very small flat stone pebble. Minimal ground decoration for adding natural scatter to terrain.",
+      "tags": ["stone", "tiny", "decoration", "ground", "pebble"],
+      "dimensions": { "width": 62, "height": 54 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Tiny decorative stone" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.2, "height": 0.2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground_decor", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Ground scatter decoration", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "40.png",
+      "name": "horn_curved_a",
+      "display_name": "Curved Horn (A)",
+      "type": "object",
+      "meta_description": "Curved wooden horn or bugle instrument with leather bindings. Can be used as signal horn or decorative forest item. Variant A facing right.",
+      "tags": ["horn", "instrument", "signal", "wood", "decoration"],
+      "dimensions": { "width": 105, "height": 95 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "So", "secondary_facet": null, "base_delta": 2, "description": "Blowing the horn signals others — social communication" },
+        "aoe": { "shape": "circle", "radius": 2, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Tap to blow horn — attracts nearby NPCs", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "41.png",
+      "name": "horn_curved_b",
+      "display_name": "Curved Horn (B)",
+      "type": "object",
+      "meta_description": "Curved wooden horn variant B facing left. Mirror of Horn A for isometric placement variety.",
+      "tags": ["horn", "instrument", "signal", "wood", "decoration"],
+      "dimensions": { "width": 105, "height": 95 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "So", "secondary_facet": null, "base_delta": 2, "description": "Horn signal — social" },
+        "aoe": { "shape": "circle", "radius": 2, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "north" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Horn variant B", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "42.png",
+      "name": "chopped_log",
+      "display_name": "Chopped Log",
+      "type": "object",
+      "meta_description": "Single chopped log with stone axe blade embedded. Result of woodcutting activity. Resource item or decorative workshop prop.",
+      "tags": ["log", "wood", "chopped", "resource", "workshop", "axe"],
+      "dimensions": { "width": 83, "height": 65 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "T", "base_delta": 2, "description": "Evidence of effort and work completed" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.5, "height": 0.3, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Collectible wood resource", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "43.png",
+      "name": "bush_green",
+      "display_name": "Green Bush",
+      "type": "sprite",
+      "meta_description": "Lush green leafy bush. Forest vegetation for filling scenes, creating borders, and hiding collectibles. Medium-sized foliage.",
+      "tags": ["bush", "vegetation", "green", "nature", "foliage", "forest"],
+      "dimensions": { "width": 149, "height": 118 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": null, "base_delta": 1, "description": "Natural vegetation promotes calm and harmony" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.8, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 2000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "May hide collectibles — tap to search", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "44.png",
+      "name": "stones_flat_pair",
+      "display_name": "Flat Stones (Pair)",
+      "type": "object",
+      "meta_description": "Two flat stepping stones of different sizes. Ground decoration for creating natural stepping stone paths through grass.",
+      "tags": ["stone", "stepping", "path", "decoration", "ground"],
+      "dimensions": { "width": 101, "height": 59 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Stepping stone decoration" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.5, "height": 0.2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground_decor", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable stepping stones", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "45.png",
+      "name": "rock_formation_large",
+      "display_name": "Rock Formation (Large)",
+      "type": "object",
+      "meta_description": "Large gray rock formation with small green sprout growing at the base. Blocking obstacle or climbable terrain feature. Represents nature's persistence.",
+      "tags": ["rock", "boulder", "stone", "obstacle", "nature", "large"],
+      "dimensions": { "width": 141, "height": 142 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": "T", "base_delta": 3, "description": "Large obstacle — overcoming it builds resilience and tenacity" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 3000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Large rock — may block path or hide items", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "46.png",
+      "name": "mushroom_red",
+      "display_name": "Red Mushroom",
+      "type": "sprite",
+      "meta_description": "Spotted red toadstool mushroom with smaller baby mushroom. Classic forest flora decoration. Collectible item for potion crafting or nature quests.",
+      "tags": ["mushroom", "red", "flora", "forest", "collectible", "nature"],
+      "dimensions": { "width": 99, "height": 96 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "Si", "base_delta": 2, "description": "Discovering forest mushrooms connects with nature and builds spatial awareness" },
+        "aoe": { "shape": "circle", "radius": 0.3, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 1000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Collectible mushroom — ingredient for nature quests", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "47.png",
+      "name": "barrel_broken",
+      "display_name": "Broken Barrel",
+      "type": "object",
+      "meta_description": "Wooden barrel with lid removed and stone pieces around it. Broken or emptied container. Decorative or post-interaction state of barrel.",
+      "tags": ["barrel", "broken", "wood", "decoration", "empty"],
+      "dimensions": { "width": 131, "height": 138 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Empty broken barrel" },
+        "aoe": { "shape": "circle", "radius": 0.5, "unit": "tiles" },
+        "hitbox": { "width": 0.7, "height": 0.7, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 1000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Search broken barrel for hidden items", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "48.png",
+      "name": "campfire",
+      "display_name": "Campfire",
+      "type": "sprite",
+      "meta_description": "Burning campfire on crossed log base with bright orange flames. Central gathering point for story moments, warmth, and NPC conversations. Key social interaction hub.",
+      "tags": ["fire", "campfire", "gathering", "social", "warm", "story", "animated"],
+      "dimensions": { "width": 97, "height": 151 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "So", "secondary_facet": "H", "base_delta": 5, "description": "Campfire is the primary social gathering point — stories, warmth, and togetherness" },
+        "aoe": { "shape": "circle", "radius": 2, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "proximity", "range": 2, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 4, "description": "Gather around the fire for stories and social interaction", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "49.png",
+      "name": "dirt_block_stony",
+      "display_name": "Dirt Block (Stony)",
+      "type": "tile",
+      "meta_description": "Isometric dirt block with embedded small stones and pebble texture. Rocky soil variant for transitional terrain between dirt and stone areas.",
+      "tags": ["ground", "dirt", "terrain", "stone", "rocky", "transition"],
+      "dimensions": { "width": 178, "height": 174 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Rocky soil terrain" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable rocky terrain", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "50.png",
+      "name": "stone_block_clean",
+      "display_name": "Stone Block (Clean)",
+      "type": "tile",
+      "meta_description": "Large clean isometric stone block with cracked surface and dark brick sides. Foundation tile for buildings, walls, and elevated areas.",
+      "tags": ["stone", "terrain", "block", "foundation", "building"],
+      "dimensions": { "width": 177, "height": 194 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": null, "base_delta": 1, "description": "Solid stone foundation" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Solid stone terrain tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "51.png",
+      "name": "slingshot",
+      "display_name": "Slingshot",
+      "type": "object",
+      "meta_description": "Green Y-shaped wooden slingshot with leather pouch. Equippable toy/tool for target practice challenges. Fun skill-building item.",
+      "tags": ["slingshot", "toy", "tool", "challenge", "skill", "equippable"],
+      "dimensions": { "width": 100, "height": 159 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "E", "secondary_facet": "Si", "base_delta": 3, "description": "Target practice with slingshot builds coordination and confidence" },
+        "aoe": { "shape": "circle", "radius": 3, "unit": "tiles" },
+        "hitbox": { "width": 0.3, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 300, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Equippable — use for target challenges", "is_movable": true, "is_destructible": false, "level_required": 1 }
+      }
+    },
+    {
+      "file": "52.png",
+      "name": "cobblestone_l_shape",
+      "display_name": "Cobblestone (L-Shape)",
+      "type": "tile",
+      "meta_description": "L-shaped arrangement of gray cobblestone blocks with green sprout in center crack. Corner path piece for creating winding stone walkways.",
+      "tags": ["stone", "cobblestone", "path", "corner", "terrain", "sprout"],
+      "dimensions": { "width": 166, "height": 164 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": "T", "base_delta": 2, "description": "Nature persisting through stone" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Corner path tile", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "53.png",
+      "name": "pine_tree_light",
+      "display_name": "Pine Tree (Light Green)",
+      "type": "sprite",
+      "meta_description": "Tall light-green pine/evergreen tree with triangular layered canopy and brown trunk on stone base. Primary forest tree for creating dense woodland scenes.",
+      "tags": ["tree", "pine", "evergreen", "forest", "vegetation", "tall", "green"],
+      "dimensions": { "width": 180, "height": 241 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "R", "base_delta": 2, "description": "Trees represent stability, growth, and harmony with nature" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0.5 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 4, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Forest tree — provides shade and ambiance", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "54.png",
+      "name": "pine_tree_bright",
+      "display_name": "Pine Tree (Bright Green)",
+      "type": "sprite",
+      "meta_description": "Tall bright yellow-green pine tree. Lighter color variant of forest tree for creating depth and variety in woodland scenes.",
+      "tags": ["tree", "pine", "evergreen", "forest", "vegetation", "tall", "bright"],
+      "dimensions": { "width": 180, "height": 239 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "R", "base_delta": 2, "description": "Bright tree adds cheerful energy to the forest" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0.5 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 4, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Bright variant forest tree", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "55.png",
+      "name": "pine_tree_autumn",
+      "display_name": "Pine Tree (Autumn Gold)",
+      "type": "sprite",
+      "meta_description": "Tall golden-orange autumn pine tree. Seasonal variant representing change and transition. Used for autumn-themed scenes or time progression areas.",
+      "tags": ["tree", "pine", "autumn", "golden", "seasonal", "vegetation", "change"],
+      "dimensions": { "width": 181, "height": 241 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": "H", "base_delta": 3, "description": "Autumn tree represents accepting change — autonomy through adaptation" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0.5 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 4, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Autumn variant — seasonal storytelling", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "56.png",
+      "name": "bucket_small",
+      "display_name": "Small Bucket",
+      "type": "object",
+      "meta_description": "Tiny wooden bucket or pail with metal band. Collectible container for water-carrying quests and farm chores.",
+      "tags": ["bucket", "wood", "container", "small", "water", "farm"],
+      "dimensions": { "width": 41, "height": 60 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "A", "secondary_facet": null, "base_delta": 1, "description": "Small container for independent task completion" },
+        "aoe": { "shape": "none" },
+        "hitbox": { "width": 0.2, "height": 0.3, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1, "cooldown_ms": 500, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 1, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Equippable — carry water", "is_movable": true, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "57.png",
+      "name": "boulder_large",
+      "display_name": "Large Boulder",
+      "type": "object",
+      "meta_description": "Massive gray boulder with weathered surface and small sprout at base. Major obstacle or landmark feature. Represents overcoming significant challenges.",
+      "tags": ["boulder", "rock", "obstacle", "large", "landmark", "nature"],
+      "dimensions": { "width": 209, "height": 279 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "R", "secondary_facet": "T", "base_delta": 5, "description": "The biggest boulder — overcoming it is a major resilience milestone" },
+        "aoe": { "shape": "circle", "radius": 1.5, "unit": "tiles" },
+        "hitbox": { "width": 1.5, "height": 2, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "tap", "range": 1.5, "cooldown_ms": 5000, "requires_facing": true },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 4, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 1, "description": "Major obstacle — may require tools or quests to move", "is_movable": false, "is_destructible": false, "level_required": 3 }
+      }
+    },
+    {
+      "file": "58.png",
+      "name": "cliff_edge_stone",
+      "display_name": "Cliff Edge (Stone)",
+      "type": "tile",
+      "meta_description": "Flat gray stone cliff edge platform with rounded drop-off. Used for creating elevation transitions, cliffs, and ledges in isometric terrain.",
+      "tags": ["cliff", "edge", "stone", "terrain", "elevation", "platform"],
+      "dimensions": { "width": 249, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Terrain edge tile" },
+        "aoe": { "shape": "rectangle", "width": 1.5, "height": 0.8, "unit": "tiles" },
+        "hitbox": { "width": 1.5, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Cliff edge — non-walkable past the edge", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "59.png",
+      "name": "cliff_edge_dirt",
+      "display_name": "Cliff Edge (Dirt)",
+      "type": "tile",
+      "meta_description": "Flat brown dirt cliff edge platform. Dirt variant of cliff edge for soil-based terrain transitions and farmland elevated areas.",
+      "tags": ["cliff", "edge", "dirt", "terrain", "elevation", "farm"],
+      "dimensions": { "width": 249, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Dirt cliff edge tile" },
+        "aoe": { "shape": "rectangle", "width": 1.5, "height": 0.8, "unit": "tiles" },
+        "hitbox": { "width": 1.5, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Dirt cliff edge", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "60.png",
+      "name": "cliff_edge_grass",
+      "display_name": "Cliff Edge (Grass)",
+      "type": "tile",
+      "meta_description": "Flat green grass cliff edge platform. Grassy variant of cliff edge for meadow elevated areas and forest hillsides.",
+      "tags": ["cliff", "edge", "grass", "terrain", "elevation", "green"],
+      "dimensions": { "width": 249, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Grass cliff edge tile" },
+        "aoe": { "shape": "rectangle", "width": 1.5, "height": 0.8, "unit": "tiles" },
+        "hitbox": { "width": 1.5, "height": 0.8, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Grass cliff edge", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "61.png",
+      "name": "hedge_large",
+      "display_name": "Large Hedge",
+      "type": "sprite",
+      "meta_description": "Large round dense green bush/hedge. Used for creating natural barriers, garden walls, maze elements, and private spaces in garden scenes.",
+      "tags": ["hedge", "bush", "vegetation", "green", "barrier", "garden", "large"],
+      "dimensions": { "width": 214, "height": 177 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "Si", "base_delta": 2, "description": "Large hedge creates protected spaces for quiet reflection" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 1.5, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 2, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Non-walkable hedge barrier", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "62.png",
+      "name": "pine_tree_dark",
+      "display_name": "Pine Tree (Dark Green)",
+      "type": "sprite",
+      "meta_description": "Tall dark-green pine tree. Deeper green variant for creating forest depth, shadows, and background layering in woodland scenes.",
+      "tags": ["tree", "pine", "evergreen", "forest", "vegetation", "dark", "tall"],
+      "dimensions": { "width": 180, "height": 241 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": "H", "secondary_facet": "R", "base_delta": 2, "description": "Deep forest tree — represents depth and grounding" },
+        "aoe": { "shape": "circle", "radius": 1, "unit": "tiles" },
+        "hitbox": { "width": 0.5, "height": 0.5, "offset_x": 0, "offset_y": 0.5 },
+        "interaction": { "type": "proximity", "range": 1, "cooldown_ms": 5000, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "objects", "z_index": 4, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Dark variant forest tree", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    },
+    {
+      "file": "63.png",
+      "name": "stone_slab_dark",
+      "display_name": "Stone Slab (Dark)",
+      "type": "tile",
+      "meta_description": "Dark gray flat stone slab tile with wet/muddy texture. Used for cave floors, dungeon areas, or damp forest clearings.",
+      "tags": ["stone", "slab", "terrain", "dark", "wet", "cave"],
+      "dimensions": { "width": 177, "height": 143 },
+      "metadata": {
+        "hearts_mapping": { "primary_facet": null, "secondary_facet": null, "base_delta": 0, "description": "Dark stone floor" },
+        "aoe": { "shape": "rectangle", "width": 1, "height": 1, "unit": "tiles" },
+        "hitbox": { "width": 1, "height": 1, "offset_x": 0, "offset_y": 0 },
+        "interaction": { "type": "none", "range": 0, "cooldown_ms": 0, "requires_facing": false },
+        "spawn": { "default_position": { "x": 0, "y": 0 }, "layer": "ground", "z_index": 0, "facing": "south" },
+        "rules": { "requires_item": null, "max_users": 0, "description": "Walkable dark stone floor", "is_movable": false, "is_destructible": false, "level_required": 0 }
+      }
+    }
+  ]
+}

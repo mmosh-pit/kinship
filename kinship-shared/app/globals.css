@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+@theme inline {
+  /* Deep navy backgrounds matching kinship.today */
+  --color-background: #050824;
+  --color-foreground: #e2e8f0;
+  --color-sidebar: #09073a;
+  --color-card: #100e59;
+  --color-card-border: rgba(255, 255, 255, 0.12);
+  --color-header: #050824;
+
+  /* Orange accent from kinship.today */
+  --color-accent: #eb8000;
+  --color-accent-dark: #c96d00;
+  --color-accent-light: rgba(235, 128, 0, 0.15);
+
+  /* Text tones */
+  --color-muted: rgba(255, 255, 255, 0.5);
+  --color-subtle: rgba(255, 255, 255, 0.78);
+
+  /* Input/form */
+  --color-input: rgba(255, 255, 255, 0.06);
+
+  /* Status badges */
+  --color-badge-draft: #eb8000;
+  --color-badge-active: #22c55e;
+  --color-badge-new: #eb8000;
+
+  /* HEARTS Facet Colors - preserved */
+  --color-hearts-h: #9b7bb8;
+  --color-hearts-e: #e07b4c;
+  --color-hearts-a: #4cada8;
+  --color-hearts-r: #5b8db8;
+  --color-hearts-t: #c9a227;
+  --color-hearts-si: #5c5a8d;
+  --color-hearts-so: #d4737a;
+
+  /* States */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Font stack — Inter primary, matching kinship.today */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Fallback custom properties for broader compatibility */
+:root {
+  --color-background: #050824;
+  --color-foreground: #e2e8f0;
+  --color-sidebar: #09073a;
+  --color-card: #100e59;
+  --color-card-border: rgba(255, 255, 255, 0.12);
+  --color-header: #050824;
+  --color-accent: #eb8000;
+  --color-accent-dark: #c96d00;
+  --color-accent-light: rgba(235, 128, 0, 0.15);
+  --color-muted: rgba(255, 255, 255, 0.5);
+  --color-subtle: rgba(255, 255, 255, 0.78);
+  --color-input: rgba(255, 255, 255, 0.06);
+}
+
+@layer base {
+  :root {
+    --rounded-btn: 0.75rem;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Select dropdown options - ensure visibility */
+  select {
+    background-color: var(--color-card);
+  }
+  select option {
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+    padding: 8px 12px;
+  }
+  select option:hover,
+  select option:focus,
+  select option:checked {
+    background-color: rgba(235, 128, 0, 0.2);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-sidebar);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Explicit utility classes for maximum compatibility */
+@layer utilities {
+  .bg-background {
+    background-color: #050824;
+  }
+  .bg-sidebar {
+    background-color: #09073a;
+  }
+  .bg-card {
+    background-color: #100e59;
+  }
+  .bg-input {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  .bg-accent {
+    background-color: #eb8000;
+  }
+  .bg-accent-dark {
+    background-color: #c96d00;
+  }
+  .bg-accent-light {
+    background-color: rgba(235, 128, 0, 0.15);
+  }
+  .hover\:bg-accent-dark:hover {
+    background-color: #c96d00;
+  }
+  .hover\:bg-white\/\[0\.06\]:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  .border-card-border {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .text-muted {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .text-subtle {
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .text-foreground {
+    color: #e2e8f0;
+  }
+  .text-accent {
+    color: #eb8000;
+  }
+  .hover\:text-accent:hover {
+    color: #eb8000;
+  }
+  .hover\:text-white:hover {
+    color: #ffffff;
+  }
+  .hover\:border-accent:hover {
+    border-color: #eb8000;
+  }
+  .hover\:border-accent\/50:hover {
+    border-color: rgba(235, 128, 0, 0.5);
+  }
+  .focus\:border-accent:focus {
+    border-color: #eb8000;
+  }
+  .focus\:border-accent\/50:focus {
+    border-color: rgba(235, 128, 0, 0.5);
+  }
+  .placeholder\:text-muted::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

@@ -1,0 +1,42 @@
+name: Backend CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["Backend CI-CD Pipeline"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 136.114.166.11
+          username: thanamsowmiya30
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+
+            echo "Login to GHCR"
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            echo "Pull latest images"
+            docker pull ghcr.io/${{ github.repository }}:latest
+
+            echo "Go to project directory"
+            cd ~/kinship-assets
+
+            echo "Update docker compose"
+            docker compose pull
+
+            echo "Stop old containers"
+            docker compose down
+           
+            echo "Restart containers"
+            docker compose up -d
+
+            echo "Deployment completed"

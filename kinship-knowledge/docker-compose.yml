@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  # PostgreSQL for kinship-backend
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: kinship
+      POSTGRES_PASSWORD: kinship
+      POSTGRES_DB: kinship_backend
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kinship"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # kinship-backend
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app  # Hot reload
+      - ./flutter_web_build:/app/flutter_web_build
+    command: >
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  pgdata:

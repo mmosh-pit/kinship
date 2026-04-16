@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-02-04T06:43:27.537Z",
+  "api": "http://192.168.1.28:4000/api/v1",
+  "results": {
+    "success": 25,
+    "failed": 0,
+    "skipped": 0
+  },
+  "created": [
+    {
+      "name": "stone_slab_cracked",
+      "id": "c4a1172e-9fdd-4877-995f-f0086447e2e9"
+    },
+    {
+      "name": "grass_block_flat",
+      "id": "6147d88c-d0f0-4b52-9898-f13413836131"
+    },
+    {
+      "name": "grass_block_clean",
+      "id": "1360e3ff-e6f6-4b3a-98ff-0cc9f2b07dcb"
+    },
+    {
+      "name": "dirt_block",
+      "id": "24b2f006-c76f-4ddf-9640-6e5bb48fc9f4"
+    },
+    {
+      "name": "barrel_short",
+      "id": "93b1be86-2d9e-45f2-956d-3a1b05eb1474"
+    },
+    {
+      "name": "ladder_wooden",
+      "id": "a396c8a1-d6b1-40eb-8c50-1acb3b2116d8"
+    },
+    {
+      "name": "tent_red",
+      "id": "399ca654-25ae-4533-a343-2529d5334f04"
+    },
+    {
+      "name": "furnace_stone_ground",
+      "id": "a2fa7272-132d-4a19-9788-b9bffc7a362f"
+    },
+    {
+      "name": "furnace_stone_elevated_a",
+      "id": "3df16abf-c8fe-4152-9e1c-a71935e93a05"
+    },
+    {
+      "name": "furnace_stone_elevated_b",
+      "id": "4f574d50-e289-483c-8084-abdfaab0c3a1"
+    },
+    {
+      "name": "well_stone",
+      "id": "bb09e995-1966-478d-a7dd-4fdb25bc7548"
+    },
+    {
+      "name": "platform_wooden",
+      "id": "34278b90-2d3f-4b9e-be0b-e0842e5c6d83"
+    },
+    {
+      "name": "sign_canvas_front",
+      "id": "dd0d6077-ceb8-4930-bc5b-6cd9033ab5d2"
+    },
+    {
+      "name": "sign_canvas_back",
+      "id": "f757d127-3903-43ad-9b29-78198a86261c"
+    },
+    {
+      "name": "pebbles_pair",
+      "id": "1db9e430-d6a0-4022-8702-775e2a4e7b84"
+    },
+    {
+      "name": "chest_wooden",
+      "id": "3a054fb4-b5e2-421a-a420-66f0ed22a3af"
+    },
+    {
+      "name": "door_short_front",
+      "id": "bbe9c189-c514-4190-a71b-77b6fd854b9d"
+    },
+    {
+      "name": "door_short_side",
+      "id": "89b1348e-eac4-422c-9cd9-a84289d064f3"
+    },
+    {
+      "name": "door_tall_front",
+      "id": "0858f7b9-b822-41a2-a118-4412cf9f9f8d"
+    },
+    {
+      "name": "door_tall_side",
+      "id": "1516fc1e-2586-4d3f-bee5-ae430532e304"
+    },
+    {
+      "name": "forge_stone_short",
+      "id": "263a0cc8-8c4c-41ba-9529-cc656dc65297"
+    },
+    {
+      "name": "forge_stone_tall",
+      "id": "8d028a3e-6a29-41fa-9e5d-b0239cbf15d7"
+    },
+    {
+      "name": "hammer_wooden_large",
+      "id": "f56238f3-785c-4e3d-8ddb-17aa8436cd2a"
+    },
+    {
+      "name": "hammer_wooden_small",
+      "id": "6f53b138-bb2d-49ee-841b-27fa82778230"
+    },
+    {
+      "name": "stone_small",
+      "id": "0f9c143e-827c-43f1-b4ef-8bd5b21864a3"
+    }
+  ],
+  "errors": []
+}

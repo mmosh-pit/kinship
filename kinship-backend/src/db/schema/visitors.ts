@@ -1,0 +1,43 @@
+import { boolean, jsonb, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+
+export const visitors = pgTable("visitors", {
+  id: text("id").primaryKey(),
+  firstName: text("first_name").notNull(),
+  email: text("email").unique().notNull(),
+  status: text("status").default("pending_email_verification"),
+  roles: jsonb("roles").default([]),
+  mobilePreference: jsonb("mobile_preference").default([]),
+  intent: jsonb("intent").default([]),
+  contactPreference: jsonb("contact_preference").default([]),
+  currentStep: text("current_step"),
+  mobileNumber: text("mobile_number"),
+  countryCode: text("country_code"),
+  telegramUsername: text("telegram_username"),
+  blueskyHandle: text("bluesky_handle"),
+  linkedinProfile: text("linkedin_profile"),
+  referedKinshipCode: text("refered_kinship_code"),
+  kinshipCode: text("kinship_code").unique(),
+  likertAnswers: jsonb("likert_answers"),
+  challenges: jsonb("challenges").default([]),
+  abilities: jsonb("abilities").default([]),
+  aspirations: jsonb("aspirations").default([]),
+  avatar: text("avatar"),
+  lastName: text("last_name"),
+  bio: text("bio"),
+  web: text("web"),
+  passwordHash: text("password_hash"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
+});
+
+export const visitorOtps = pgTable("visitor_otps", {
+  id: serial("id").primaryKey(),
+  email: text("email"),
+  mobile: text("mobile"),
+  otpHash: text("otp_hash").notNull(),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  hasVerifiedEmail: boolean("has_verified_email").default(false),
+  isMobileNumberVerified: boolean("is_mobile_number_verified").default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
+});

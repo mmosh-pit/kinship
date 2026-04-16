@@ -1,0 +1,47 @@
+name: Backend CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["Backend CI-CD Pipeline"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 136.114.166.11
+          username: thanamsowmiya30
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "Login to GHCR"
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            echo "Pull latest Docker image"
+            docker pull ghcr.io/${{ github.repository }}:latest
+
+            echo "Stop old container"
+            docker stop kinship-assets || true
+
+            echo "Remove old container"
+            docker rm kinship-assets || true
+
+            echo "Run new container"
+            docker run -d \
+              --name kinship-assets \
+              --restart always \
+              -p 4000:4000 \
+              -e DB_HOST=172.17.0.1 \
+              -e DB_PORT=5432 \
+              -e DB_USER=kinship_user \
+              -e DB_PASSWORD=Kumaravel@02 \
+              -e DB_NAME=kinship_assets \
+              ghcr.io/${{ github.repository }}:latest
+
+            echo "Deployment completed"

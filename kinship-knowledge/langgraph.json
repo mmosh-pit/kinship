@@ -1,0 +1,13 @@
+{
+  "dependencies": [".", "langchain-anthropic"],
+  "graphs": {
+    "scene_generation": "./app/graphs/scene_generation.py:scene_gen_graph",
+    "knowledge_ingest": "./app/graphs/knowledge_ingest.py:ingest_graph",
+    "prompt_assembly": "./app/graphs/prompt_assembly.py:prompt_assembly_graph",
+    "npc_dialogue": "./app/graphs/npc_dialogue.py:dialogue_graph",
+    "hearts_scoring": "./app/graphs/hearts_scoring.py:hearts_scoring_graph",
+    "route_resolution": "./app/graphs/route_resolution.py:route_resolution_graph"
+  },
+  "env": ".env",
+  "python_version": "3.12"
+}

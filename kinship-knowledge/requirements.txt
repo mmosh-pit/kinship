@@ -1,0 +1,54 @@
+# === Core Framework ===
+fastapi==0.115.7
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+websockets==14.2
+
+# === LangChain Ecosystem (Compatible 0.3.x Series) ===
+langchain==0.3.23
+langchain-core==0.3.78
+langchain-anthropic==0.3.22
+langchain-community==0.3.21
+
+# === LangGraph (Compatible with langchain-core 0.3.x) ===
+langgraph==0.2.68
+langgraph-checkpoint==2.0.12
+
+# === LangSmith ===
+langsmith==0.3.45
+
+# === Database ===
+sqlalchemy[asyncio]==2.0.37
+asyncpg==0.30.0
+alembic==1.14.1
+psycopg[binary]==3.2.5
+
+# === AI / ML ===
+anthropic==0.69.0
+voyageai==0.3.3
+
+# === Vector DB ===
+pinecone-client==6.0.0
+# pinecone-client==5.4.0
+
+# === Auth ===
+firebase-admin==6.6.0
+python-jose[cryptography]==3.3.0
+
+# === HTTP Client ===
+aiohttp==3.11.12
+httpx==0.28.1
+
+# === Utilities ===
+pydantic==2.10.6
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+tiktoken==0.8.0
+
+# === Dev / Testing ===
+pytest==8.3.4
+pytest-asyncio==0.25.3
+pypdf
+langchain-openai==1.1.11
+google-generativeai==0.8.6
+langchain-google-genai==4.2.1

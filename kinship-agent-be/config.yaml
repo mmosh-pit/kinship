@@ -1,0 +1,168 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# Kinship Agent - Configuration File
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# This file contains:
+# - MCP Tool Registry (tool name → MCP server mapping)
+# - Cache settings
+# - Orchestration settings
+#
+# Environment variables in .env take precedence for sensitive data (API keys).
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# MCP Tool Registry
+# ─────────────────────────────────────────────────────────────────────────────────
+# Maps tool names (stored in Worker.tools array) to MCP server configurations.
+#
+# Workers only store tool names like ["bluesky", "google"].
+# This registry tells the system WHERE those tools are hosted.
+#
+# MCP servers handle credentials internally - we just call them.
+# Tool capabilities are defined in worker system prompts, not here.
+# ─────────────────────────────────────────────────────────────────────────────────
+
+mcp_tools:
+  # Social Media
+  bluesky:
+    url: "http://10.128.15.247/mcp"
+    transport: "streamable_http"
+
+  # Blockchain
+  solana:
+    url: "https://ai-solana.kinshipbots.com/mcp"
+    transport: "streamable_http"
+
+  # Google Workspace (Gmail, Calendar, Drive)
+  google_gmail_tool:
+    url: "http://104.154.145.122:8001/mcp"
+    transport: "streamable_http"
+  
+  google_calendar_tool:
+    url: "http://104.154.145.122:8002/mcp"
+    transport: "streamable_http"
+
+  google_meet_tool:
+    url: "http://104.154.145.122:8003/mcp"
+    transport: "streamable_http"
+
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# Cache Settings
+# ─────────────────────────────────────────────────────────────────────────────────
+# Controls caching behavior to optimize performance and memory usage.
+# ─────────────────────────────────────────────────────────────────────────────────
+
+cache:
+  # Compiled LangGraph cache (per Presence agent)
+  graph:
+    max_size: 100              # Maximum number of cached compiled graphs
+    ttl_seconds: 3600          # Time-to-live: 1 hour
+
+  # Worker configuration cache
+  worker:
+    max_size: 500              # Maximum number of cached worker configs
+    ttl_seconds: 300           # Time-to-live: 5 minutes
+
+  # Presence context cache (includes worker list, capabilities)
+  presence:
+    max_size: 200              # Maximum number of cached presence contexts
+    ttl_seconds: 300           # Time-to-live: 5 minutes
+
+  # MCP tools cache (tools fetched from MCP servers)
+  mcp_tools:
+    max_size: 50               # Maximum number of cached tool lists (per server)
+    ttl_seconds: 600           # Time-to-live: 10 minutes
+
+  # MCP client connections
+  mcp_clients:
+    max_size: 20               # Maximum number of cached MCP client connections
+    ttl_seconds: 1800          # Time-to-live: 30 minutes
+
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# Orchestration Settings
+# ─────────────────────────────────────────────────────────────────────────────────
+# Controls the agent orchestration behavior.
+# ─────────────────────────────────────────────────────────────────────────────────
+
+orchestration:
+  # Intent Analysis Settings
+  intent:
+    confidence_threshold: 0.7   # Minimum confidence to route to a worker (0.0 - 1.0)
+    fallback_to_supervisor: true  # If no worker matches, supervisor responds directly
+
+  # Worker Execution Settings
+  worker:
+    max_tool_calls: 10         # Maximum tool calls per single request
+    timeout_seconds: 60        # Timeout for worker execution
+    tool_timeout_seconds: 30   # Timeout for individual tool calls
+    retry_on_failure: true     # Retry failed tool calls
+    max_retries: 2             # Maximum retry attempts
+
+  # Worker Limits (Concern #14)
+  max_workers_per_presence: 50  # Maximum workers per presence to prevent slow routing
+
+  # Streaming Settings (Concern #10 - Backpressure)
+  streaming:
+    chunk_size: 1              # Tokens per SSE event (1 = character-by-character)
+    heartbeat_seconds: 15      # Keep-alive heartbeat interval
+    include_intermediate_events: true  # Emit intent, routing, tool_call events
+    # Backpressure settings
+    max_buffer_size: 1000      # Maximum tokens to buffer before applying backpressure
+    client_timeout_seconds: 30 # Timeout for slow clients
+    max_response_tokens: 4000  # Maximum response length to prevent runaway generation
+
+  # Approval Settings (for sensitive actions)
+  approval:
+    enabled: false             # Enable approval workflow for sensitive actions
+    sensitive_tools:           # Tools that require approval
+      - "send_email"
+      - "post_tweet"
+      - "delete_event"
+    timeout_seconds: 300       # Approval timeout: 5 minutes
+
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# Voice Chat Settings
+# ─────────────────────────────────────────────────────────────────────────────────
+# Configuration for real-time voice chat using Gemini Live API.
+# ─────────────────────────────────────────────────────────────────────────────────
+
+voice:
+  # Enable/disable voice chat feature
+  enabled: true
+  
+  # Voice provider (currently only gemini_live supported)
+  provider: "gemini_live"
+  
+  # Gemini Live API settings
+  gemini:
+    # Use gemini-3.1-flash-live-preview for the Live API
+    model: "gemini-3.1-flash-live-preview"
+    # Available voices: Aoede, Charon, Fenrir, Kore, Puck
+    default_voice: "Aoede"
+  
+  # Audio settings
+  audio:
+    input_sample_rate: 16000    # Client microphone sample rate
+    output_sample_rate: 24000   # Gemini output sample rate
+    input_encoding: "LINEAR16"  # 16-bit PCM
+    output_encoding: "LINEAR16"
+    chunk_duration_ms: 100      # Audio chunk size
+  
+  # Session limits
+  session:
+    max_duration_seconds: 600   # Maximum session length: 10 minutes
+    idle_timeout_seconds: 30    # End session after 30s of silence
+    keepalive_interval_seconds: 15
+  
+  # Tool settings for voice
+  tools:
+    enabled: true               # Allow MCP tools in voice sessions
+    # Tools that require verbal confirmation before execution
+    confirmation_required:
+      - "transfer"
+      - "send"
+      - "delete"
+      - "post"

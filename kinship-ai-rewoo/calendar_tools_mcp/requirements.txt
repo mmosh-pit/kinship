@@ -1,0 +1,14 @@
+fastmcp>=0.1.0
+pymongo>=4.6.0
+motor>=3.4.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+requests>=2.31.0 
+google-api-python-client>=2.188.0
+google-auth>=2.47.0
+google-auth-oauthlib>=1.2.4
+python-dateutil
+pytz
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+cryptography>=41.0.0

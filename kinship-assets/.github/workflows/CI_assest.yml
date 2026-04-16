@@ -1,0 +1,113 @@
+name: Backend CI-CD Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+      - github-action
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check Formatting
+        run: npm run format
+
+      - name: Lint Code
+        run: npm run lint
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Run Tests
+        run: npm test
+
+  build-and-push:
+    needs: build-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get Version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Set Docker Tag
+        id: tag
+        run: |
+          SHORT_SHA=${GITHUB_SHA::7}
+          BRANCH=${GITHUB_REF##*/}
+          
+          if [ "$BRANCH" = "main" ]; then
+            echo "tag=v${{ steps.version.outputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=beta-$SHORT_SHA" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -t $REGISTRY/${IMAGE_NAME}:${{ steps.tag.outputs.tag }} \
+            .
+
+      - name: Push Docker Image
+        run: |
+          docker push $REGISTRY/${IMAGE_NAME}:${{ steps.tag.outputs.tag }}
+
+      - name: Tag and Push Latest
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker tag \
+            $REGISTRY/${IMAGE_NAME}:${{ steps.tag.outputs.tag }} \
+            $REGISTRY/${IMAGE_NAME}:latest
+          
+          docker push $REGISTRY/${IMAGE_NAME}:latest
+
+      - name: Create Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
